@@ -10,7 +10,8 @@ const getAllDogs = () => axios.get(baseURL).then(dogsCallback).catch(errCallback
 const createDog  = body => axios.post(baseURL, body).then(dogsCallback).catch(errCallback);
 const updateDog = (id, type) => axios.put(`${baseURL}/${id}`, {type}).then(dogsCallback).catch(errCallback);
 const deleteDog = (id) => axios.delete(`${baseURL}/${id}`).then(dogsCallback).catch(errCallback);
-const checkFriendly = () => axios.get(`${baseURL}?age=${age}`)
+const checkFriendly = (age) => axios.get(`${baseURL}?age=${age}`)
+
 
 //create functions to handle sending and recieving data
 const submitHandler = event => {
@@ -20,25 +21,23 @@ const submitHandler = event => {
     let breed = document.querySelector('#breed');
     let trait = document.querySelector('#trait');
     let lifespan = document.querySelector('#lifespan');
-    let rating = document.querySelector('#rating');
-    let goodboy = document.querySelector('#goodboy');
+    let friendly = document.querySelector('#rating');
 
     let dogObject = {
         name: name.value,
         breed: breed.value,
         trait: trait.value,
         lifespan: lifespan.value,
-        rating: rating.value,
-        goodboy: goodboy.value
+        friendly: friendly.value,
     }
 
-    createDogCard(dogObject);
+    createDog(dogObject);
 
     name.value = "";
     breed.value = "";
     trait.value = "";
     lifespan.value = "";
-    goodboy.checked = false;
+    friendly.value = 5;
     
     /*
     This will take the form input data and covert it into
@@ -59,9 +58,9 @@ const createDogCard = dog => {
     <p class="lifespan">Lifespan: ${dog.lifespan} years</p>
     <p class="trait">Best Trait: ${dog.trait}</p>
     <div class="btns-container">
-        <button onClick="updateRating(${dog.id}, 'minus')">-</button>
+        <button onClick="updateDog(${dog.id}, 'minus')">-</button>
         <p class="friendliness">Friendliness:${dog.friendly}</p>
-        <button onClick="updateRating(${dog.id}, 'plus')">+</button>
+        <button onClick="updateDog(${dog.id}, 'plus')">+</button>
     </div>
     <button onClick="deleteDog(${dog.id})">Delete</button>`
 
