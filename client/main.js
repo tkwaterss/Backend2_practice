@@ -11,7 +11,7 @@ const getAllDogs = () => axios.get(baseURL).then(dogsCallback).catch(errCallback
 const createDog  = body => axios.post(baseURL, body).then(dogsCallback).catch(errCallback);
 const updateDog = (id, type) => axios.put(`${baseURL}/${id}`, {type}).then(dogsCallback).catch(errCallback);
 const deleteDog = (id) => axios.delete(`${baseURL}/${id}`).then(dogsCallback).catch(errCallback);
-const checkFriendly = (rating) => axios.get(`${baseURL}/rating?age=${rating}`)
+const checkFriendly = (rating) => axios.get(`${baseURL}/rating?rating=${rating}`).then(dogsCallback).catch(errCallback);
 
 
 //create functions to handle sending and recieving data
@@ -79,6 +79,6 @@ const displayDogs = arr => {
 }
 
 dogForm.addEventListener('submit', submitHandler);
-friendlyFilter.addEventListener('submit', submitHandler);
+friendlyFilter.addEventListener('submit', filterHandler);
 
 getAllDogs();

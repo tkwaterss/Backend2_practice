@@ -34,7 +34,12 @@ module.exports = {
         res.status(200).send(dogData);
     },
     checkFriendly: (req,res) => {
-        event.preventDefault();
-        console.log(req.query);
+        let {rating} = req.query;
+        rating = +rating;
+        let newDogData =  dogData.filter(dogObj => {
+            return dogObj.friendly === rating;
+        })
+        console.log(newDogData);
+        res.status(200).send(newDogData);
     }
 }
