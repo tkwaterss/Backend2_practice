@@ -8,10 +8,8 @@ module.exports = {
         res.status(200).send(dogData)
     },
     createDog: (req,res) => {
-        console.log(req.body);
-        console.log(dogData[1]);
         let newDog = {...req.body, id:id}
-        console.log(newDog);
+        newDog.friendly = +newDog.friendly;
         dogData.push(newDog);
         res.status(200).send(dogData)
         id++
@@ -39,7 +37,6 @@ module.exports = {
         let newDogData =  dogData.filter(dogObj => {
             return dogObj.friendly === rating;
         })
-        console.log(newDogData);
         res.status(200).send(newDogData);
     }
 }
