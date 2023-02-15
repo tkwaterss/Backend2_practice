@@ -5,7 +5,7 @@
         "breed": "Yellow Lab",
         "lifespan": 12,
         "trait": "Swimming",
-        "friendly": 10
+        "friendly": 5
     },
     {
         "id": 2,
@@ -13,7 +13,7 @@
         "breed": "Golden Retreiver",
         "lifespan": 13,
         "trait": "Fetch",
-        "friendly": 9
+        "friendly": 5
     },
     {
         "id": 3,
@@ -21,7 +21,7 @@
         "breed": "Blue Heeler",
         "lifespan": 16,
         "trait": "Herding",
-        "friendly": 7
+        "friendly": 3
     },
     {
         "id": 4,
@@ -29,7 +29,7 @@
         "breed": "Great Dane",
         "lifespan": 7,
         "trait": "Massive",
-        "friendly": 8
+        "friendly": 4
     },
     {
         "id": 5,

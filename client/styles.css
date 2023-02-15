@@ -41,13 +41,14 @@ main{
 .dogCard {
     width: 40%;
     border: solid;
-    height: 20rem;
+    height: 10rem;
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: space-evenly;
+    align-items: center;
     margin-top: 20px;
 }
 .btns-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }

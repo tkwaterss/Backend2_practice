@@ -7,18 +7,15 @@ app.use(express.json());
 app.use(cors());
 
 const {
-//controller functions
+    getAllDogs,
+    createDog,
+    updateDog,
+    deleteDog
 } = require('./controller');
 
-
-
-//server functions will call functions from controller
-//app.get('/api/movies', getMovies);
-
-
-
-
-
-
+app.get("/api/dogs", getAllDogs)
+app.post("/api/dogs", createDog)
+app.put("/api/dogs/:id", updateDog)
+app.delete("/api/dogs/:id", deleteDog)
 
 app.listen(4000, console.log("Server running on 4000"));
