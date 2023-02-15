@@ -8,9 +8,48 @@
     <title>Practice 2</title>
 </head>
 <body>
+    <header>
+        <h2>Dog Breeds</h2>
+    </header>
+
+        <form>
+            <label class="textInput" for="name">Dog Name: <input type="text" id="name" name="name"></label>
+            <label class="textInput" for="breed">Dog Breed: <input type="text" id="breed" name="breed"> </label>
+            <label class="textInput" for="trait">Defining Trait: <input type="text" id="trait" name="trait"> </label>
+            <label class="textInput" for="lifespan">Average Lifespan: <input type="text" id="lifespan" name="lifespan"> </label>
+            <label for="rating">Friendliness Rating:</label>
+            <select name="rating" id="rating">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <label for="goodboy"><input type="radio" name="goodboy" id="goodboy" value="yes"> GoodBoy?</label>
+            
+            <input type="submit">
+        </form>
     
 
-
+    <main id="dogs-container">
+        <div class="dogCard">
+            <h3 class="name">${dog.name}</h3>
+            <h4 class="breed">${dog.breed}</h4>
+            <p class="lifespan">Lifespan: ${dog.lifespan}</p>
+            <p class="trait">Best Trait: ${dog.trait}</p>
+            <div class="btns-container">
+                <button onClick="updateRating(${dog.id}, 'minus')">-</button>
+                <p class="friendliness">Friendliness: ${dog.friendly</p>
+                <button onClick="updateRating(${dog.id}, 'plus')">+</button>
+            </div>
+            <button onClick="deleteDog(${dog.id})">Delete</button>
+        </div>
+        <div class="dogCard"></div>
+        <div class="dogCard"></div>
+        <div class="dogCard"></div>
+        <div class="dogCard"></div>
+        <div class="dogCard"></div>
+    </main>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>

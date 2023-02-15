@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "name": "Thule",
+        "breed": "Yellow Lab",
+        "lifespan": 12,
+        "trait": "Swimming",
+        "friendly": 10
+    },
+    {
+        "id": 2,
+        "name": "Buddy",
+        "breed": "Golden Retreiver",
+        "lifespan": 13,
+        "trait": "Fetch",
+        "friendly": 9
+    },
+    {
+        "id": 3,
+        "name": "Spot",
+        "breed": "Blue Heeler",
+        "lifespan": 16,
+        "trait": "Herding",
+        "friendly": 7
+    },
+    {
+        "id": 4,
+        "name": "Clifford",
+        "breed": "Great Dane",
+        "lifespan": 7,
+        "trait": "Massive",
+        "friendly": 8
+    },
+    {
+        "id": 5,
+        "name": "lil bitch",
+        "breed": "Chihuahua",
+        "lifespan": 20,
+        "trait": "Royal Asshole",
+        "friendly": 1
+    }
+]
