@@ -1,5 +1,6 @@
 const dogsContainer = document.querySelector('#dogs-container');
-const dogForm = document.querySelector('form');
+const dogForm = document.querySelector('#newDogForm');
+const friendlyFilter = document.querySelector('#filterForm')
 
 let baseURL = "http://localhost:4000/api/dogs"
 
@@ -10,7 +11,7 @@ const getAllDogs = () => axios.get(baseURL).then(dogsCallback).catch(errCallback
 const createDog  = body => axios.post(baseURL, body).then(dogsCallback).catch(errCallback);
 const updateDog = (id, type) => axios.put(`${baseURL}/${id}`, {type}).then(dogsCallback).catch(errCallback);
 const deleteDog = (id) => axios.delete(`${baseURL}/${id}`).then(dogsCallback).catch(errCallback);
-const checkFriendly = (age) => axios.get(`${baseURL}?age=${age}`)
+const checkFriendly = (rating) => axios.get(`${baseURL}/rating?age=${rating}`)
 
 
 //create functions to handle sending and recieving data
@@ -38,14 +39,17 @@ const submitHandler = event => {
     trait.value = "";
     lifespan.value = "";
     friendly.value = 5;
-    
-    /*
-    This will take the form input data and covert it into
-    usable object data that will be passed into the create dog
-    function
-    will need to prevent default submit action
-    will need to reset form at end
-    */
+}
+
+//Function to take in filter form and direct the data
+const filterHandler = event => {
+    event.preventDefault();
+
+    let filter = document.querySelector('#filter')
+
+    checkFriendly(filter.value);
+
+    filter.value = 1;
 }
 
 //add event listeners
@@ -72,12 +76,9 @@ const displayDogs = arr => {
     for(let i = 0; i < arr.length; i++) {
         createDogCard(arr[i]);
     }
-    /*
-    This function needs to take in the dogs array from the server
-    and push it onto the web page
-    */
 }
 
-dogForm.addEventListener('submit', submitHandler)
+dogForm.addEventListener('submit', submitHandler);
+friendlyFilter.addEventListener('submit', submitHandler);
 
 getAllDogs();

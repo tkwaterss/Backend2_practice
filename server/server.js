@@ -18,6 +18,6 @@ app.get("/api/dogs", getAllDogs)
 app.post("/api/dogs", createDog)
 app.put("/api/dogs/:id", updateDog)
 app.delete("/api/dogs/:id", deleteDog)
-app.get("/api/dogs/:id", checkFriendly)
+app.get("/api/dogs/rating", checkFriendly)
 
 app.listen(4000, console.log("Server running on 4000"));

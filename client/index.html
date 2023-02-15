@@ -12,7 +12,7 @@
         <h2>Dog Breeds</h2>
     </header>
 
-        <form>
+        <form class="inputs" id="newDogForm">
             <label class="textInput" for="name">Dog Name: <input type="text" id="name" name="name"></label>
             <label class="textInput" for="breed">Dog Breed: <input type="text" id="breed" name="breed"> </label>
             <label class="textInput" for="trait">Defining Trait: <input type="text" id="trait" name="trait"> </label>
@@ -26,6 +26,17 @@
                 <option value="5">5</option>
             </select>
             <!-- <label for="goodboy"><input type="radio" name="goodboy" id="goodboy" value="yes"> GoodBoy?</label> -->
+            <input type="submit">
+        </form>
+        <form class="inputs" id="filterForm">
+            <label for="filter" class="textInput">Flter by Friendlyness</label>
+            <select name="filter" id="filter">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
             <input type="submit">
         </form>
     

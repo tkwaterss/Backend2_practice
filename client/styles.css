@@ -21,7 +21,7 @@ header {
     padding: 20px;
     background-color: rgb(170, 202, 191);
 }
-form {
+.inputs {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;

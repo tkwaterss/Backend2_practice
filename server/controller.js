@@ -34,6 +34,7 @@ module.exports = {
         res.status(200).send(dogData);
     },
     checkFriendly: (req,res) => {
-
+        event.preventDefault();
+        console.log(req.query);
     }
 }
